@@ -1,3 +1,4 @@
+
 import 'babel-polyfill';
 import express from 'express';
 import { matchRoutes } from 'react-router-config';
@@ -6,13 +7,15 @@ import Routes from './client/Routes';
 import renderer from './helpers/renderer';
 import createStore from './helpers/createStore';
 
+const PORT = process.env.PORT || 3000
+
 const app = express();
 
 app.use(
   '/api',
   proxy('http://react-ssr-api.herokuapp.com', {
     proxyReqOptDecorator(opts) {
-      opts.headers['x-forwarded-host'] = 'localhost:3000';
+      opts.headers['x-forwarded-host'] = 'afternoon-wave-34569.herokuapp.com';
       return opts;
     }
   })
@@ -48,6 +51,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Listening on prot 3000');
+app.listen(PORT, () => {
+  console.log('Listening on prot ' + PORT);
 });
