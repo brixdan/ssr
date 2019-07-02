@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MathJax example</title>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "all" } }
+    });
+    </script>
+
+    <script type="text/x-mathjax-config">
+  //
+  //  The document is hidden until MathJax is finished, then
+  //   this function runs, making it visible again.
+  //
+  MathJax.Hub.Queue(function () {
+    document.getElementById("hide_page").style.visibility = "";
+  });
+</script>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+    </script>
+
+    <!--<script type="text/javascript" src="/MathJax.js?config=TeX-AMS_HTML-full"></script>-->
+
+    <style>
+        h1 {text-align:center}
+        h2 {
+            font-weight: bold;
+            background-color: #DDDDDD;
+            padding: .2em .5em;
+            margin-top: 1.5em;
+            border-top: 3px solid #666666;
+            border-bottom: 2px solid #999999;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+ |
+ | This DIV keeps the page blank until after the math is typeset.
+ |-->
+<div id="hide_page" style="visibility:hidden">
+
+    <p>
+        There is a mess in existing definitions. Must clarify. Let F be a field of zero characteristic (any extension over fractions field Q which is minimal field with this property).
+        Polynomial form over F, PForm(F,n), of order n is a formal notation
+
+    <p style="text-align:center">
+        \begin{equation}
+        PForm[F,n](x) = \sum_i \prod_{j = 1..n}^{k_{ij} < n} c_ix_j^{k_{ij}} = \sum_i^{0 <= {k_{ij}} < n} c_ix_1^{k_{i1}} ... x_n^{k_{in}} \text{, where } c_i \in F
+        \end{equation}
+    </p>
+    <p style="text-align:center">
+        In particular, polinomial of order n over field F
+        \begin{equation}
+        Pol[F,n](x) = \sum_{i=0}^{n} c_ix^{i} \text{, where } c_i \in F
+        \end{equation}
+    </p>
+    <p>
+        Each form or polynomial incapsulates an algorithm for calculation a corresponding function, when variables get some values. Still that function is not the same as formal polynomial. If function turns to zero for some variables \( \alpha_1...\alpha_k \) they are said to be roots. If such variable values can be found in F, than F is said to be a splitting field for Polynomial P and it is fungible (though not identical) under algebraic operations to form \( (x - \alpha_1)...(x - \alpha_k)   \). Fundamental theorem of algebra states that complex numbers field is a splitting field for all plynomials with complex coefficients. For Quotients field it's not the case. Every polynomial equation gives a formal rule to cut formal degree of elements in formal extension F[x] via variable x. Than all elements of F[x] can be cut to be quotients of polynomials of orders < n by applying substitution
+        \begin{equation}
+        x^n = c_1x^{n-1} + ... + c_n \text{, where } c_i \in F
+        \end{equation}
+        There's one interesting point to that. Polynomial quotients do not exactly form a field. At least because 1/x is a fluxion (derivative) of transcendent function ln(x). It's integral in other words is transcendental function which is strange. But, there's a way to think of it still as a field in multiverse, which gets instantiated in math world by getting substitution x to some value. Then it sure becomes a valid field, even if denominator is going to turn to 0. It means, that such an element is banned, but division by zero is banned in every field, so it's not a problem. Math definitions only say about Ring of polynomial. But being substantiated by value it becomes valid field. So, one still can think of a Field of quotient polynomial forms as preliminary design project of future valid field, but existing somewhere in multiverse, not exactly in our stackoverflow spacetime.
+    </p>
+    <p>
+        Algebraic extension of F is an extension via roots of some polynomial of n-th order: E = F[\( \alpha_1...\alpha_n \)]. Suppose that E is an extension of the field F (written as E/F and read "E over F"). An automorphism of E/F is defined to be an automorphism of E that fixes F pointwise. In other words, an automorphism of E/F is an isomorphism α from E to E such that α(x) = x for each x ∈ F. The set of all automorphisms of E/F forms a group with the operation of function composition. This group is sometimes denoted by Aut(E/F). If E/F is a Galois extension (E is a splitting field of a separable polynomial with coefficients in F), then Aut(E/F) is called the "Galois group of (the extension) E over F, and is usually denoted by Gal(E/F). If E/F is not a Galois extension, then the Galois group of (the extension) E over F is sometimes defined as Aut(G/F), where G is the Galois closure of E.<br/>
+        As an illustration, consider \(f (x) = (x^2 − 2)(x^2 − 3) \text{ in } Q[x] \), which has the roots
+        \( \alpha_1, \alpha_2 = \pm \sqrt {2} \) and \( \alpha_3, \alpha_4 = \pm \sqrt {3} \). There are numerous polynomials q in \( Q[x_1,x_2,x_3,x_4] \) such that \( q( \alpha_1,\alpha_2,\alpha_3,\alpha_4 ) = 0 \), for example
+        \begin{equation}
+        q(x_1,x_2,x_3,x_4) = x_3^2 - x_1^2 - 1 = 0
+        \end{equation}
+        Formal substitution of roots \( (\alpha_1,\alpha_3) \) makes this form invalid. So \( S_4 \) is too big for a group of Automorphisms of this particular field.
+    </p>
+    <p>Symmetrical polynomials (todo)</p>
+    <p style="text-align:center; text-decoration: underline; color: red">Idea behind
+    </p>
+    <p>
+        Lots of heavy and complicated books are written to get insights into this whole thing of Abel-Ruffini theorem that quintic equations cannot be solved by radicals. But from point of view of multiverse (virtuality) it becomes a very simple idea. Every abstract finite group can be digitised (or mounted, or substantiated) into subgroup of some \( S_n \) space. We say "space" because it splits into dimentions. But they are not equal since many different ways of digitising exsist. Abstract group lives in multiverse, \( S_n \) - in our concrete space time. Nevertheless, abstract group is consistent, without contradictions and can be digitised at any time.<br/>
+        When abstract group has a property, all it's digit instances have that same property, independently of the way of digitising. Suppose, field E, subfield of a finitely generated field G, is an algebraic extension of field F: E = F[\( \alpha \)]. Then, \( Aut_E(G) \), group of automorphisms of field G that fixes E pointwise   \( ( \forall \varphi \in Aut_E(G) \text { and } \forall e \in E \text {, } \varphi(e) = e) \) is apparently finite group, as is \( Aut_F(G) \). And \( Aut_E(G) \) is a subgroup of \( Aut_F(G) \), which may well appear to be proper. This property of being abstract subgroup, fixing extension field is independent of digitising method (roots renaming) and thus equivalent to being normal subgroup. <br/>
+        <p>
+    Suppose there be an equation
+    \begin{equation}
+    a_0x^n + a_1x^{n-1} + ... + a_n = 0 \text{, where } a_i \in Q
+    \end{equation}
+    which has n distinct roots \( \alpha_1,...,\alpha_n \) not in Q, then:
+    <ul><li>
+    Those roots form a basis of field \( E = Q[\alpha_1,...,\alpha_n] \) in a sense that every
+    element of E is a quotient of it's polynomials of degrees less then n.
+</li><li>
+    Every automorphism \( Aut_Q(E) \) preserves any identity in E. In particular, equation (5). That is why it must trasfer any root \( \alpha_i \) to some other (or the same) root \( \alpha_j \), because there are no other roots of (5) except those in \( \{ \alpha_1,...,\alpha_n \} \)
+</li><li>
+    Any permutation of roots \( \{ \alpha_1,...,\alpha_n \} \) being the basis of E induces exactly one automorphism \( Aut_Q(E) \) which means there are exactly n! of them (number of permutations in \( S_n \))
+</li></ul>
+
+</p>
+    Suppose there be a formula for general roots of (5) in radicals. It must contain a few innermost radicals (that doesn't contain inner radicals). By taking sequential extensions by one of them, one could produce a chain of extensions ... \( Q[\sqrt ] \)... and a corresponding chain of subgroups in the group \( Aut_Q(E) \) fixing those extensions instead of Q. Apparently, they are subgroups. Suppose, there's no proper subgroup in all of that extensions chain. Then, at some step subgroup must jump from G to {e}. Radical, producing such an extension, abides, apparently, equation \( x^k = b \in E_i \) - where \( E_i \) - some previous extension field, for some k < n. Then we have a jump by cyclic extension (some minor details omitted for case when k is not a prime) from the whole group G = \( Aut_Q(E) \) to identity group \( \{ e \} \) and thus all G must be cyclic, which is a contradiction.
+    Then, there must be a proper subgroup N in the \( Aut_Q(E) \) fixing elements of some subfield of E. But that property is abstract, independent of roots enumeration, which translates in being normal property of a subgroup:
+    \begin{equation}
+     \forall g \in G, \forall n \in N \text {  } gng^{-1} \in N
+    \end{equation}
+    <br/>
+    <p> So, the simple idea of abstract property of pointwise fixing being translated in normality property in \( S_n \) is all that is needed for the solution of the problem. Which illustrates the difference of being virtual and being concrete. Complexity of equations space grows rapidly with dimensions. Single dimension is a school program of math (quadratic equation). Two dimensional space (cubic equations) is for specialists (Cardano, Omar Khayyam). Three dimensional space requires exceptional minds like Abel, Ruffini, Galois. Four dimensional space is impossible by complexity and, as we suspect, by physical reasons.</p>
+    <p>The only thing that is left for proof is the existence for every natural n and every field E a polynomial of order n with simple (non-equal pairwise) roots, which are not in E. This is not so simple and even wrong when E is of positive characteristics ( for example \( Z_p \) for prime p ). When \( Q \subset E \), the simple way is to look at unity roots. For prime p every root (except 1) of equation \( x^p = 1 \) is simple and primitive because \( \alpha_k = e^{i \pi k \over p}, k < p \), and apparently, \( \alpha_k = \alpha_m => k = m \). They are not in Q because Z is factorable ring - every number have a single representation by degrees of primes (order aside).
+    </p>
+</div>
+</body>
+</html>
